@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# PyCharm
+.idea/
+
+# Virtual VENV
+venv/
+
+# Allure
+allure-report/
+allure-results/
+
+# Pytest
+.pytest_cache
+
+# Environment variables
+.env
+
+# MacOS
+.DS_Store

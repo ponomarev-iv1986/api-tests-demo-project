@@ -1,0 +1,34 @@
+{
+  "channelInitiator": "DZO_DC_RBIDOS",
+  "method": {
+    "identificationULOpenRq": {
+      "inn": "410115547453",
+      "ogrn": "321392600041566",
+      "subDivisionCode": "38903801087",
+      "legalRepresentativeOpn": {
+        "fioFLRq": {
+          "familyName": "Доронин",
+          "firstName": "Казимир",
+          "patronymic": "Семенович"
+        },
+        "identityCardOpn": {
+          "documentType": 17,
+          "idSeries": "8023",
+          "idNum": "9697704034",
+          "dateIssue": "2023-06-14",
+          "issueBy": "НОВО-УОЯНСКИМ ОМ СЕВЕРОБАЙКАЛЬСКОГО РОВД РЕСП. БУРЯТИЯ",
+          "issuedByCode": "112-112"
+        },
+        "birthDate": "1964-03-12",
+        "birthPlace": "Москва",
+        "contactInfoRq": {
+          "email": "emailKazimir@domain.ru",
+          "phoneNumber": "9697704034"
+        },
+        "personAddressOpn": {
+          "addressString": "г. Москва, Кутузовский пр-т 32к2"
+        }
+      }
+    }
+  }
+}

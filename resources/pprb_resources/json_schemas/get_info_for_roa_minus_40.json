@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "statusCode"
+      ]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "birthDate": {
+          "type": "string"
+        },
+        "idSeries": {
+          "type": "string"
+        },
+        "idNum": {
+          "type": "string"
+        },
+        "inn": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "packageOfServices": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "birthDate",
+        "idSeries",
+        "idNum",
+        "inn",
+        "phoneNumber",
+        "email",
+        "packageOfServices"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "response"
+  ]
+}

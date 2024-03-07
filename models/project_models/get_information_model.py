@@ -5,21 +5,19 @@ import jsonschema
 from jsonschema.exceptions import ValidationError
 from requests import Response
 
-from api_requests import pprb_request
+from api_requests import base_request
 from helpers.load_json_schema import load_schema
 
 
-class UpdateInfoForROA:
-    def __init__(self, request: pprb_request.SendRequest):
+class GetInformation:
+    def __init__(self, request: base_request.SendRequest):
         self.request = request
         self.response: Optional[Response] = None
 
     # API_METHODS
-    @allure.step('Выполнить запрос UpdateInfoForROARq.')
+    @allure.step('Выполнить запрос GetInformation')
     def send_request(self, *args, **kwargs):
-        self.response = self.request.post(
-            '/v1/updateInfoForROA', *args, **kwargs
-        )
+        self.response = self.request.post('/GetInformation', *args, **kwargs)
 
     # VERIFICATION
     @allure.step('Проверить, что status code ответа равен {status_code}.')
@@ -39,9 +37,7 @@ class UpdateInfoForROA:
             f'В заголовке {key} ожидалось значение {value}.'
         )
 
-    @allure.step(
-        'Проверить, что структура ответа соответствует ожидаемой JSON схеме.'
-    )
+    @allure.step('Проверить, что структура ответа соответствует ожидаемой JSON схеме.')
     def validate_json_schema(self, json_schema):
         response_body = self.response.json()
         schema = load_schema(json_schema)
@@ -52,9 +48,7 @@ class UpdateInfoForROA:
                 f'Структура ответа не соответствует ожидаемой JSON схеме.\n\n{err}'
             )
 
-    @allure.step(
-        'Проверить, что поле status в теле ответа соответствует ожидаемому.'
-    )
+    @allure.step('Проверить, что поле status в теле ответа соответствует ожидаемому.')
     def verify_status(self, **status):
         response_body = self.response.json()
         actual_status = response_body.get('status')

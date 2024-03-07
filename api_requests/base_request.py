@@ -50,4 +50,3 @@ class SendRequest(requests.Session):
 
 
 send = SendRequest(config.settings.BASE_URL)
-send_uola = SendRequest(config.settings.UOLA_URL)
